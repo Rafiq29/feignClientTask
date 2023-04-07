@@ -1,4 +1,4 @@
-package com.herb.feigndemo.config;
+package org.herb.feignclienttask.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -19,13 +19,13 @@ public class SwaggerConfig extends WebMvcConfigurationSupport {
     private static final String DESCRIPTION = "Api Documentation";
     private static final String VERSION = "2.0";
     private static final String LICENSE = "Apache License Version 2.0";
-    private static final String LICENSE_URL = "http://www.apache.org/licenses/LICENSE-2.0";
+    private static final String LICENSE_URL = "https://www.apache.org/licenses/LICENSE-2.0";
 
     @Bean
     public Docket productApi() {
         return new Docket(DocumentationType.SWAGGER_2)
                 .select()
-                .apis(RequestHandlerSelectors.basePackage("com.herb.feigndemo"))
+                .apis(RequestHandlerSelectors.basePackage("org.herb.feignclienttask"))
                 .build()
                 .pathMapping("/")
                 .apiInfo(metaData());
